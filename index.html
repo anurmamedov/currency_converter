@@ -4,26 +4,28 @@
         <meta charset="UTF-8">
         <title>Currency</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
         <script src="main.js"></script>
     </head>
     <body>
-        <div class="container">
-            <div class="columns">
+      <div class="container">
+          <div class="columns">
                 <div class="column">
                     <div class="field">
                         <label class="label">Amount</label>
                         <div class="control">
-                            <input class="input is-hovered" type="text" placeholder="Numbers">
+                            <input id="amount" class="input is-hovered" type="text" placeholder="Enter amount">
                         </div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="field">
                         <label class="label">From</label>
-                        <div class="dropdown is-active">
+                        <div class="dropdown">
                             <div class="dropdown-trigger">
                               <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                <span>Dropdown button</span>
+                                <span>USD - US Dollar</span>
                                 <span class="icon is-small">
                                   <i class="fas fa-angle-down" aria-hidden="true"></i>
                                 </span>
@@ -31,12 +33,10 @@
                             </div>
                             <div class="dropdown-menu" id="dropdown-menu" role="menu">
                               <div class="dropdown-content">
-                                <a href="#" class="dropdown-item"> Dropdown item </a>
-                                <a class="dropdown-item"> Other dropdown item </a>
-                                <a href="#" class="dropdown-item is-active"> Active dropdown item </a>
-                                <a href="#" class="dropdown-item"> Other dropdown item </a>
-                                <hr class="dropdown-divider" />
-                                <a href="#" class="dropdown-item"> With a divider </a>
+                                <a href="#" class="dropdown-item">USD - US Dollar</a>
+                                <a class="dropdown-item">EUR - Euro</a>
+                                <a href="#" class="dropdown-item is-active">GBP - British Pound</a>
+                                <a href="#" class="dropdown-item">CAD - Canadian Dollar</a>
                               </div>
                             </div>
                           </div>
@@ -45,13 +45,32 @@
                 <div class="column">
                     <div class="field">
                         <label class="label">To</label>
-                        <div class="control">
-                            <input class="input is-hovered" type="text" placeholder="Currency">
+                        <div class="dropdown">
+                            <div class="dropdown-trigger">
+                              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                <span>USD - US Dollar</span>
+                                <span class="icon is-small">
+                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                              <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">USD - US Dollar</a>
+                                <a class="dropdown-item">EUR - Euro</a>
+                                <a href="#" class="dropdown-item is-active">GBP - British Pound</a>
+                                <a href="#" class="dropdown-item">CAD - Canadian Dollar</a>
+                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
+              
+            </div>
+            <div class="buttons is-flex is-justify-content-center">
+              <button id="convert" class="con-button button is-info is-medium">Convert</button>
+              </div>
+        </div>
     </body>
 </html>
