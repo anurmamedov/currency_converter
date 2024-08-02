@@ -13,11 +13,17 @@ document.addEventListener("DOMContentLoaded",function(){
     var convert = document.getElementById('convert');
     convert.addEventListener('click', function() {
         convertAmount(amount.value)
+        fromButton = document.getElementById('from-button'); 
+        console.log(fromButton.value)
+
+        toButton = document.getElementById('to-button'); 
+        console.log(toButton.value)
+
+    
 
     });
 
     function convertAmount(number) {
-        console.log(number * 2)
         fetch('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_zHRgxYdqbaA38Aa8NdW0HxZY0T0natnrQDEOYZ1R&currencies=EUR%2CUSD%2CCAD')
 
         .then(response => response.json())
@@ -30,6 +36,10 @@ document.addEventListener("DOMContentLoaded",function(){
     function multiplyCurrency(data, number) {
         console.log(data['data']['CAD'] * number)
     }
+
+
+    
+
 
 });
 

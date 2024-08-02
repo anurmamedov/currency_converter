@@ -23,22 +23,12 @@
                     <div class="field">
                         <label class="label">From</label>
                         <div class="dropdown">
-                            <div class="dropdown-trigger">
-                              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                <span>USD - US Dollar</span>
-                                <span class="icon is-small">
-                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                              </button>
-                            </div>
-                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                              <div class="dropdown-content">
-                                <a href="#" class="dropdown-item">USD - US Dollar</a>
-                                <a class="dropdown-item">EUR - Euro</a>
-                                <a href="#" class="dropdown-item is-active">GBP - British Pound</a>
-                                <a href="#" class="dropdown-item">CAD - Canadian Dollar</a>
-                              </div>
-                            </div>
+                            <select id="from-button" class="dropdown-content">
+                              <option value="usd" class="dropdown-item is-active">USD - US Dollar</option>
+                              <option value="eur" class="dropdown-item">EUR - Euro</option>
+                              <option value="gbp" class="dropdown-item">GBP - British Pound</option>
+                              <option value="cad" class="dropdown-item">CAD - Canadian Dollar</option>
+                            </select>
                           </div>
                     </div>
                 </div>
@@ -46,23 +36,13 @@
                     <div class="field">
                         <label class="label">To</label>
                         <div class="dropdown">
-                            <div class="dropdown-trigger">
-                              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                <span>USD - US Dollar</span>
-                                <span class="icon is-small">
-                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                              </button>
-                            </div>
-                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                              <div class="dropdown-content">
-                                <a href="#" class="dropdown-item">USD - US Dollar</a>
-                                <a class="dropdown-item">EUR - Euro</a>
-                                <a href="#" class="dropdown-item is-active">GBP - British Pound</a>
-                                <a href="#" class="dropdown-item">CAD - Canadian Dollar</a>
-                              </div>
-                            </div>
-                        </div>
+                            <select id="to-button" class="dropdown-content">
+                              <option value="usd" class="dropdown-item is-active">USD - US Dollar</option>
+                              <option value="eur" class="dropdown-item">EUR - Euro</option>
+                              <option value="gbp" class="dropdown-item">GBP - British Pound</option>
+                              <option value="cad" class="dropdown-item">CAD - Canadian Dollar</option>
+                            </select>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -70,5 +50,12 @@
               <button id="convert" class="con-button button is-info is-medium">Convert</button>
               </div>
         </div>
+        <select id="sel">
+          <option disabled>Choose Shuffle</option>
+          <option value="none" selected disabled hidden>Choose Shuffle</option>
+          <option value="3">3 moves</option>
+          <option value="30">30 Moves</option>
+          <option value="60">60 Moves</option>
+        </select>
     </body>
 </html>
