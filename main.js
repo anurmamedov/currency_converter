@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded",function(){
-
     document.querySelectorAll('.dropdown').forEach(item => {
         item.addEventListener('click', function(event) {
             event.stopPropagation();
@@ -8,19 +7,12 @@ document.addEventListener("DOMContentLoaded",function(){
     });
 
     var amount = document.getElementById('amount');
-
-
     var convert = document.getElementById('convert');
+
     convert.addEventListener('click', function() {
         convertAmount(amount.value)
         fromButton = document.getElementById('from-button'); 
-        console.log(fromButton.value)
-
         toButton = document.getElementById('to-button'); 
-        console.log(toButton.value)
-
-    
-
     });
 
     function convertAmount(number) {
@@ -34,12 +26,36 @@ document.addEventListener("DOMContentLoaded",function(){
     };
 
     function multiplyCurrency(data, number) {
-        console.log(data['data']['CAD'] * number)
+        var result = 0 
+        if (fromButton.value == 'usd' && toButton.value == 'usd'){
+            result = amount.value
+        }
+        else if (fromButton.value == 'usd' && toButton.value == 'eur'){
+            result = amount.value * data['data']['EUR']
+        }
+        else if (fromButton.value == 'usd' && toButton.value == 'cad'){
+            result = amount.value * data['data']['CAD']
+        }
+        else if (fromButton.value == 'eur' && toButton.value == 'eur'){
+            result = amount.value
+        }
+        else if (fromButton.value == 'eur' && toButton.value == 'usd'){
+            result = amount.value / data['data']['EUR']
+        }
+        else if (fromButton.value == 'eur' && toButton.value == 'cad'){
+            result = amount.value / data['data']['EUR'] * (data['data']['CAD'])
+        }
+        else if (fromButton.value == 'cad' && toButton.value == 'cad'){
+            result = amount.value
+        }
+        else if (fromButton.value == 'cad' && toButton.value == 'usd'){
+            result = amount.value / data['data']['CAD']
+        }
+        else if (fromButton.value == 'cad' && toButton.value == 'eur'){
+            result = amount.value / data['data']['CAD'] * (data['data']['EUR'])
+        }
+        console.log(result, 2)
     }
-
-
-    
-
 
 });
 
