@@ -54,7 +54,19 @@ document.addEventListener("DOMContentLoaded",function(){
         else if (fromButton.value == 'cad' && toButton.value == 'eur'){
             result = amount.value / data['data']['CAD'] * (data['data']['EUR'])
         }
-        console.log(result, 2)
+
+        displayResult(result)
+    }
+
+
+    function displayResult(result){
+        let resultArea = document.getElementById('result-area')
+        resultArea.innerHTML = ''
+        div1 = document.createElement('div')
+        div1.classList.add('has-text-danger')
+        div1.textContent = result
+        resultArea.appendChild(div1)
+        console.log(resultArea)
     }
 
 });
