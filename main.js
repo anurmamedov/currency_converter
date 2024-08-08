@@ -72,18 +72,18 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
     function displayResult(result){
-        let resultArea = document.getElementById('result-area')
-        resultArea.innerHTML = ''
-        label = document.createElement('label')
-        label.classList.add('has-text-black')
-        label.textContent = 'Result'   
-        resultArea.appendChild(label)  
-        div1 = document.createElement('div')
-        div1.classList.add('has-text-danger')
-        div1.textContent = result
+        let resultArea = document.getElementById('result-area');
+        resultArea.innerHTML = '';
+
+        let label = document.createElement('label');
+        label.classList.add('has-text-black');
+        label.textContent = 'Result';
+        resultArea.appendChild(label);
+
+        let div1 = document.createElement('div');
+        div1.classList.add('has-text-danger');
+        div1.textContent = result;
         resultArea.appendChild(div1)
     }
 });
-
-
 
