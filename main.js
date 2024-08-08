@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded",function(){
 
     function convertAmount(number) {
         fetch(requestAPIadress)
-
         .then(response => response.json())
         .then(data => multiplyCurrency(data, number))
         .catch(error => displayError(error));
@@ -38,35 +37,9 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
     function multiplyCurrency(data, number) {
-        var result = 0 
-        if (fromButton.value == 'usd' && toButton.value == 'usd'){
-            result = amount.value * data['data']['USD']
-        }
-        else if (fromButton.value == 'usd' && toButton.value == 'eur'){
-            result = amount.value * data['data']['EUR']
-        }
-        else if (fromButton.value == 'usd' && toButton.value == 'cad'){
-            result = amount.value * data['data']['CAD']
-        }
-        else if (fromButton.value == 'eur' && toButton.value == 'eur'){
-            result = amount.value * data['data']['EUR']
-        }
-        else if (fromButton.value == 'eur' && toButton.value == 'usd'){
-            result = amount.value / data['data']['EUR']
-        }
-        else if (fromButton.value == 'eur' && toButton.value == 'cad'){
-            result = amount.value / data['data']['EUR'] * (data['data']['CAD'])
-        }
-        else if (fromButton.value == 'cad' && toButton.value == 'cad'){
-            result = amount.value * data['data']['CAD']
-        }
-        else if (fromButton.value == 'cad' && toButton.value == 'usd'){
-            result = amount.value / data['data']['CAD']
-        }
-        else if (fromButton.value == 'cad' && toButton.value == 'eur'){
-            result = amount.value / data['data']['CAD'] * (data['data']['EUR'])
-        }
-
+        var result = 0
+        result = (data['data'][toButton.value.toUpperCase()] / data['data'][fromButton.value.toUpperCase()]) * (amount.value)
+    
         displayResult(result)
     };
 
